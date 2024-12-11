@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <%-include('__bootstrap.ejs')%>
+</head>
+
+<body>
+    <%-include('__header.ejs')%>
+        <div class="container mt-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+                <div class="col" style="padding: 10px 10px 10px 10px;">
+                    <div class="card">
+                        <div class="card-body" style="border: 1px solid black;">
+                            <h3>Add Product</h3>
+                            <form action="/product/add-product" method="POST">
+                                <div class="form-group">
+                                    <input name="name" type="text" placeholder="Enter product title"
+                                        class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input name="cid" type="text" placeholder="Enter product category id"
+                                        class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input name="price" type="text" placeholder="Enter product price"
+                                        class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success">ADD</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+                    <div class="col" style="padding: 10px 10px 10px 10px;">
+                        <div class="card">
+                            <div class="card-body" style="border: 1px solid black;">
+                                <h3>Add Category</h3>
+
+                                <form action="/category/add-category" method="POST">
+                                    <div class="form-group">
+                                        <input name="name" type="text" placeholder="Enter the category"
+                                            class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button class="btn btn-success">ADD</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+                        <div class="col" style="padding: 10px 10px 10px 10px;">
+                            <div class="card">
+                                <div class="card-body" style="border: 1px solid black;">
+                                    <h3>Delete Product</h3>
+                                    <form action="/product/delete-product" method="POST">
+                                        <div class="form-group">
+                                            <input name="name" type="text" placeholder="Enter product to be deleted"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="price" type="text" placeholder="Enter product category"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="price" type="text" placeholder="Enter product price"
+                                                class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-success">DELETE</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-4">
+                        <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+                            <div class="col" style="padding: 10px 10px 10px 10px;">
+                                <div class="card">
+                                    <div class="card-body" style="border: 1px solid black;">
+                                        <h3>Delete Category</h3>
+                                        <form action="/category/delete-category" method="POST">
+                                            <div class="form-group">
+                                                <input name="title" type="text" placeholder="Enter category title"
+                                                    class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-success">Delete</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</body>
+
+</html>
