@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <%-include('__bootstrap.ejs')%>
+</head>
+
+<body>
+    <%-include('__header.ejs')%>
+        <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+            <% product.forEach(item=> { %>
+                <div class="col" style="padding: 10px 10px 10px 10px;">
+                    <div class="card">
+                        <div class="card-body" style="border: 1px solid black;">
+                            <h5 class="card-title">Category :
+                                <%= item.category %>
+                            </h5>
+                            <p class="card-text">ID : <%= item.id %>
+                            </p>
+
+                            <p class="card-text">This is a Category card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+
+                            <div class="d-grid gap-2 d-md-block">
+                                <a onclick="return confirm('Want to delete?')"
+                                    href="/category/delete-category/<%= item.id %>">
+                                    <button class="btn btn-outline-danger" type="button">DELETE</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+</body>
+
+</html>
