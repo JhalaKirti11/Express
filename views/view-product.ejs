@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <%-include('__bootstrap.ejs')%>
+</head>
+
+<body>
+  <%-include('__header.ejs')%>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:20px">
+      <% product.forEach(item=> { %>
+        <div class="col" style="padding: 10px 10px 10px 10px;">
+          <div class="card">
+            <div class="card-body" style="border: 1px solid black;">
+              <h5 class="card-title">
+                <%= item.name %>
+              </h5>
+              <h2 class="card-title">ID : <%= item.id %>
+              </h2>
+              <p class="card-text">Category : <%= item.category %>
+              </p>
+              <p class="card-text">Price : <%= item.price %>
+              </p>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <div class="d-grid gap-2 d-md-block">
+                <a href="/product/edit-product/<%= item.id%>">
+                  <button class="btn btn-secondary" type="button">Edit</button></a>
+
+                <a onclick="return confirm('Want to delete ?')" href="/product/delete-product/<%= item.id %>">
+                  <button class="btn btn-outline-danger" type="button">Delete</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+    </div>
+
+</body>
+
+</html>
